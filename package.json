@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/amairot/frontend-project-44/issues"
   },
+  "type": "module",
   "homepage": "https://github.com/amairot/frontend-project-44#readme"
 }
