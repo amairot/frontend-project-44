@@ -6,7 +6,7 @@ const progGame = () => {
 
   const generateProg = () => {
     const progStart = generateRandomNumber(15);
-    const progChange = generateRandomNumber(5);
+    const progChange = generateRandomNumber(4) + 1;
     const progLength = 5 + generateRandomNumber(10);
     const answerPosition = generateRandomNumber(progLength - 1);
     const prog = [progStart];
