@@ -25,7 +25,8 @@ const calcGame = () => {
             default:
                 break;
         }
-        return [questionCalc, `${answerCalc}`];
+        const QnA = [questionCalc, `${answerCalc}`];
+        return QnA;
     };
 
     gameRun(calcRule, generateCalc);
