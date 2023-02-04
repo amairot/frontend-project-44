@@ -1,5 +1,5 @@
 import generateRandomNumber from '../rng.js';
-import gameRun from '../index.js'; 
+import gameRun from '../index.js';
 
 const calcGame = () => {
   const calcRule = 'What is the result of the expression?';

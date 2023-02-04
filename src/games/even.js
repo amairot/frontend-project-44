@@ -1,5 +1,5 @@
 import generateRandomNumber from '../rng.js';
-import gameRun from '../index.js'; 
+import gameRun from '../index.js';
 
 const evenGame = () => {
   const evenRule = 'Answer "yes" if the number is even, otherwise answer "no".';
