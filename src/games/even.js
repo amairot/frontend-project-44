@@ -1,40 +1,21 @@
-import readlineSync from 'readline-sync';
+import generateRandomNumber from "../rng.js";
+import gameRun from "../index.js"; // needs game rule + gen game function w array[question, answer (string!!!)]
 
 const evenGame = () => {
-  const generateRandomNumber = () => {
-    const max = 100; // maximum possible number
-    return Math.floor(Math.random() * max);
-  };
+  const evenRule = 'Answer "yes" if the number is even, otherwise answer "no".';
+  const generateEven = () =>{
+        const questionEven = generateRandomNumber(20);
+        let answerEven = '';
+        if ((questionEven % 2) === 0) {
+          answerEven = 'yes';
+        } else {
+          answerEven = 'no';
+        }
+        const QnA = [questionEven, `${answerEven}`];
+        return QnA;
+    };
 
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  let winCount = 0;
-  for (let i = 0; i < 3; i += 1) {
-    const questionNumber = generateRandomNumber();
-    let correctAnswer = '';
-    if ((questionNumber % 2) === 0) {
-      correctAnswer = 'yes';
-    } else {
-      correctAnswer = 'no';
-    }
-    console.log(`Question: ${questionNumber}`);
-    const answerGiven = readlineSync.question('Your answer: ');
-    if (correctAnswer === answerGiven) {
-      console.log('Correct!');
-      winCount += 1;
-      continue;
-    } else {
-      console.log(`'${answerGiven}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${userName}!`);
-      break;
-    }
-  }
-
-  if (winCount === 3) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+    gameRun(evenRule, generateEven);
 };
 
 export default evenGame;
