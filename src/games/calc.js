@@ -12,7 +12,7 @@ const calcGame = () => {
     const qTwo = generateRandomNumber(10);
     const qOperation = calcOperations[generateRandomNumber(3)];
     const questionCalc = `${qOne} ${qOperation} ${qTwo}`;
-    let answerCalc = expressionCalc(qOne, qTwo, qOperation);
+    const answerCalc = expressionCalc(qOne, qTwo, qOperation);
     const QnA = [questionCalc, `${answerCalc}`];
     return QnA;
   };

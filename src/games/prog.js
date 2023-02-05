@@ -13,7 +13,7 @@ const progGame = () => {
     const answerPosition = generateRandomNumber(progLength - 1);
     const prog = generateProgression(progStart, progChange, progLength);
     const answerProg = prog[answerPosition];
-    const questionProg = generateProgressionString(prog, answerPosition); 
+    const questionProg = generateProgressionString(prog, answerPosition);
     const QnA = [questionProg, `${answerProg}`];
     return QnA;
   };

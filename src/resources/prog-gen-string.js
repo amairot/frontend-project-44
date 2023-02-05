@@ -1,13 +1,13 @@
 const generateProgressionString = (progression, answerPosition) => {
-    let progressionString = '';
-    for (let i = 0; i < progression.length; i += 1) {
-      if (i === answerPosition) {
-        progression[answerPosition] = '..';
-      }
+  let progressionString = '';
+  for (let i = 0; i < progression.length; i += 1) {
+    if (i === answerPosition) {
+      progressionString = `${progressionString} ..`;
+    } else {
       progressionString = `${progressionString} ${progression[i]}`;
     }
-    return progressionString;
-
+  }
+  return progressionString;
 };
 
 export default generateProgressionString;
