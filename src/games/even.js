@@ -1,16 +1,12 @@
-import generateRandomNumber from '../rng.js';
+import generateRandomNumber from '../resources/rng.js';
 import gameRun from '../index.js';
+import ifEven from '../resources/even-check.js'
 
 const evenGame = () => {
   const evenRule = 'Answer "yes" if the number is even, otherwise answer "no".';
   const generateEven = () => {
     const questionEven = generateRandomNumber(20);
-    let answerEven = '';
-    if ((questionEven % 2) === 0) {
-      answerEven = 'yes';
-    } else {
-      answerEven = 'no';
-    }
+    const answerEven = ifEven(questionEven);
     const QnA = [questionEven, `${answerEven}`];
     return QnA;
   };
