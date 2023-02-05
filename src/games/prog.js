@@ -1,5 +1,7 @@
-import generateRandomNumber from '../rng.js';
+import generateRandomNumber from '../resources/rng.js';
 import gameRun from '../index.js';
+import generateProgression from '../resources/progression-gen.js';
+import generateProgressionString from '../resources/prog-gen-string.js';
 
 const progGame = () => {
   const progRule = 'What number is missing in the progression?';
@@ -9,19 +11,9 @@ const progGame = () => {
     const progChange = generateRandomNumber(4) + 1;
     const progLength = 5 + generateRandomNumber(10);
     const answerPosition = generateRandomNumber(progLength - 1);
-    const prog = [progStart];
-    for (let i = 1; i < progLength; i += 1) {
-      prog.push(prog[i - 1] + progChange);
-    }
+    const prog = generateProgression(progStart, progChange, progLength);
     const answerProg = prog[answerPosition];
-    let questionProg = '';
-    for (let i = 0; i < progLength; i += 1) {
-      if (i === answerPosition) {
-        prog[answerPosition] = '..';
-      }
-      questionProg = `${questionProg} ${prog[i]}`;
-    }
-
+    const questionProg = generateProgressionString(prog, answerPosition); 
     const QnA = [questionProg, `${answerProg}`];
     return QnA;
   };
