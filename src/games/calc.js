@@ -1,5 +1,6 @@
-import generateRandomNumber from '../rng.js';
+import generateRandomNumber from '../resources/rng.js';
 import gameRun from '../index.js';
+import expressionCalc from '../resources/random-expression-calc.js';
 
 const calcGame = () => {
   const calcRule = 'What is the result of the expression?';
@@ -11,20 +12,7 @@ const calcGame = () => {
     const qTwo = generateRandomNumber(10);
     const qOperation = calcOperations[generateRandomNumber(3)];
     const questionCalc = `${qOne} ${qOperation} ${qTwo}`;
-    let answerCalc = 0;
-    switch (qOperation) {
-      case '+':
-        answerCalc = qOne + qTwo;
-        break;
-      case '-':
-        answerCalc = qOne - qTwo;
-        break;
-      case '*':
-        answerCalc = qOne * qTwo;
-        break;
-      default:
-        break;
-    }
+    let answerCalc = expressionCalc(qOne, qTwo, qOperation);
     const QnA = [questionCalc, `${answerCalc}`];
     return QnA;
   };
