@@ -7,7 +7,7 @@ const generateProgressionString = (progression, answerPosition) => {
       progressionString = `${progressionString} ${progression[i]}`;
     }
   }
-  return progressionString;
+  return progressionString.slice(1);
 };
 
 export default generateProgressionString;
